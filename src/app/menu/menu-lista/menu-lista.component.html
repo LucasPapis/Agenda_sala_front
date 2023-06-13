@@ -1,0 +1,65 @@
+
+<app-titulo [tituloName]="'Salas'"></app-titulo>
+<table class="table text-center mx-auto" style="width: 95%;">
+  <thead class="table-dark">
+    <tr>
+      <th>#</th>
+      <th>Sala</th>
+      <th>Atendente</th>
+      <th>Paciente</th>
+      <th>Tempo de atendimento</th>
+      <th>Status</th>
+      <th><i class="fa fa-gear"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Sala Bomba</td>
+      <td>Ana Pirulito</td>
+      <td>Paciente teste da silva</td>
+      <td>20min</td>
+      <td class="align-middle justify-content-start">
+        <span class="badge border rounded-circle p-1" style="background-color:#ff0000">
+          <span class="visually-hidden"></span>
+        </span>
+      </td>
+      <td>
+        <button type="button" routerLink="/menu/menu-agendamento" class="btn btn-outline-primary btn-sm me-1">
+          <i class="fa fa-address-book fa-lg"></i>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Sala do Choro</td>
+      <td>nenhum</td>
+      <td>nenhum</td>
+      <td></td>
+      <td class="align-middle">
+        <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
+          <span class="visually-hidden"></span>
+        </span>
+      </td>
+      <td>
+        <button type="button" routerLink="/menu/menu-agendamento" class="btn btn-outline-primary btn-sm me-1">
+          <i class="fa fa-address-book fa-lg"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<footer class="position-absolute bottom-0 end-0 me-4 mb-2">
+  <div class="d-inline me-2">
+    <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
+      <span class="visually-hidden"></span>
+    </span>
+    Livre
+  </div>
+  <div class="d-inline">
+    <span class="badge border rounded-circle p-1" style="background-color:#ff0000">
+      <span class="visually-hidden"></span>
+    </span>
+    Ocupado
+  </div>
+</footer>

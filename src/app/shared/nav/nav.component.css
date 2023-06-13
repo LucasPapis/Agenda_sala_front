@@ -1,0 +1,8 @@
+.customDivButton{
+  transition-duration: 0.4s;
+}
+.customDivButton:hover{
+  background-color: rgb(13, 106, 255);
+  color: white!important;
+  transition-property: background-color;
+}

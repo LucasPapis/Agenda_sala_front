@@ -1,0 +1,36 @@
+<nav class="nav bg-primary bg-gradient shadow p-2 text-white d-flex justify-content-between fixed-top">
+  <button type="button" class="nav-item btn customDivButton align-middle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+    <i class="fa-solid fa-bars fa-2xl" style="color:white"></i>
+  </button>
+  <!-- <app-titulo [tituloName]="'Controle de salas'" class="nav-item mt-2"></app-titulo> -->
+  <p class="nav-item mt-3"><strong>Clinica Pilares</strong></p>
+  <p class="nav-item">Data: {{data|async}}<br/>Hora: {{hora|async}}</p>
+</nav>
+ <!-- Button trigger modal -->
+
+<!-- Sidebar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header bg-primary bg-gradient">
+    <a routerLink="/menu/menu-lista" class="text-decoration-none"><h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">Menu</h5></a>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a routerLink="/pacientes/pacientes-lista" class="nav-link link-dark customDivButton rounded p-3" data-bs-dismiss="offcanvas">
+          Cadastro de pacientes
+        </a>
+      </li>
+      <li>
+        <a routerLink="/atendentes/atendentes-lista" class="nav-link link-dark customDivButton rounded p-3" data-bs-dismiss="offcanvas">
+          Cadastro de atendentes
+        </a>
+      </li>
+      <li>
+        <a routerLink="/salas/salas-lista" class="nav-link link-dark customDivButton rounded p-3" data-bs-dismiss="offcanvas">
+          Configuração de salas
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
