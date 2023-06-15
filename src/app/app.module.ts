@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuAgendamentosComponent } from './menu/menu-agendamentos/menu-agendamentos.component';
+import { AgendamentoDetalheComponent } from './menu/agendamento-detalhe/agendamento-detalhe.component';
 import { MenuListaComponent } from './menu/menu-lista/menu-lista.component';
 import { SalasComponent } from './salas/salas.component';
 import { Salas_listaComponent } from './salas/salas_lista/salas_lista.component';
@@ -24,6 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       MenuComponent,
       MenuListaComponent,
       MenuAgendamentosComponent,
+      AgendamentoDetalheComponent,
       SalasComponent,
       Salas_listaComponent,
       Salas_detalheComponent,
@@ -49,6 +53,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],

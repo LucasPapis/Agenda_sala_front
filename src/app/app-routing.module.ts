@@ -12,11 +12,13 @@ import { Pacientes_listaComponent } from './pacientes/pacientes_lista/pacientes_
 import { AtendentesComponent } from './atendentes/atendentes.component';
 import { Atendentes_detalheComponent } from './atendentes/atendentes_detalhe/atendentes_detalhe.component';
 import { Atendentes_listaComponent } from './atendentes/atendentes_lista/atendentes_lista.component';
+import { AgendamentoDetalheComponent } from './menu/agendamento-detalhe/agendamento-detalhe.component';
 
 const routes: Routes = [
   {path: 'menu', component:  MenuComponent, children:[
     {path: 'menu-lista', component: MenuListaComponent},
-    {path: 'menu-agendamento', component:  MenuAgendamentosComponent}
+    {path: 'menu-agendamento', component:  MenuAgendamentosComponent},
+    {path: 'agendamento-detalhe', component: AgendamentoDetalheComponent}
   ]},
   {path: 'pacientes', component: PacientesComponent, children:[
     {path: 'pacientes-detalhe', component: Pacientes_detalheComponent},
