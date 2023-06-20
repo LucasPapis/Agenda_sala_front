@@ -1,26 +1,28 @@
 <app-titulo [tituloName]="'Agendamento'"></app-titulo>
-<div class="container w-50">
-  <form [formGroup]="formulario" class="row g-3 mt-1 border rounded">
-    <div>
+<div class="container" id="container">
+  <form [formGroup]="formulario" class="row g-3 mt-1 border rounded" id="form">
+    <div class="col-md-12">
       <label for="terapeuta" class="form-label">Terapeuta:</label>
       <input type="text" class="form-control" id="terapeuta">
     </div>
-    <div>
+    <div class="col-md-12">
       <label for="paciente" class="form-label">Paciente:</label>
       <input type="text" class="form-control" id="paciente">
     </div>
-    <div class="col-4">
-      <label for="dt_agenda" class="form-label">Data do Agendamento</label>
-      <div class="input-group col-sm-2 ">
+    <div class="col-6" id="dt-agenda">
+      <label for="dt_agenda" class="form-label">Data do Agendamento:</label>
+      <div class="input-group col-sm-2">
         <input type="datetime" class="form-control" formControlName="dt_agenda" id="dt_agenda"
         [bsConfig]="bsConfig" bsDatepicker #datapicker="bsDatepicker" triggers="none"
         placement="right"/>
-      <button class="btn btn btn-outline-primary" (click)="abrirCalendario()"><i class="fa-solid fa-calendar-days"></i></button>
+        <button class="btn btn btn-outline-primary" (click)="abrirCalendario()"><i class="fa-solid fa-calendar-days"></i></button>
       </div>
     </div>
-    <div class="col-4" >
-      <timepicker formControlName="myTime" id="myTime" [showMeridian]="false"></timepicker>
+    <div class="col-6" id="timepicker">
+      <label for="myTime" class="form-label">Hora do agendamento:</label>
+      <timepicker formControlName="myTime" id="myTime" [showMeridian]="false" [showSpinners]="false"></timepicker>
     </div>
+
     <!-- <div class="ms-1">
       <label class="form-check-label" for="ativoPacientes">Ativo</label>
       <div class="form-check form-switch">

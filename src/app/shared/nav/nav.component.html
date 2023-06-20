@@ -1,10 +1,14 @@
 <nav class="nav bg-primary bg-gradient shadow p-2 text-white d-flex justify-content-between fixed-top">
   <button type="button" class="nav-item btn customDivButton align-middle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
-    <i class="fa-solid fa-bars fa-2xl" style="color:white"></i>
+    <i class="fa-solid fa-bars fa-2xl"></i>
   </button>
   <!-- <app-titulo [tituloName]="'Controle de salas'" class="nav-item mt-2"></app-titulo> -->
-  <p class="nav-item mt-3"><strong>Clinica Pilares</strong></p>
-  <p class="nav-item">Data: {{data|async}}<br/>Hora: {{hora|async}}</p>
+  <span id="name">
+    <p><strong>Clinica Pilares</strong></p>
+  </span>
+  <span id="datetime">
+    <p>{{data|async}}<br/>{{hora|async}}</p>
+  </span>
 </nav>
  <!-- Button trigger modal -->
 

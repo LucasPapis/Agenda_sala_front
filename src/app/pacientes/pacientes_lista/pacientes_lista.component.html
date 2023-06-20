@@ -1,8 +1,7 @@
 <app-titulo [tituloName]="'Pacientes'"></app-titulo>
-<table class="table text-center mx-auto" style="width: 95%;">
-  <thead class="table-dark">
+<table class="table text-center mx-auto response-table align-middle">
+  <thead class="table-dark align-middle">
     <tr>
-      <th>#</th>
       <th>Nome</th>
       <th>Data de nascimento</th>
       <th>Ativo</th>
@@ -11,17 +10,16 @@
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
       <td>Paciente teste da silva</td>
       <td>01/04/1998</td>
-      <td class="align-middle">
+      <td>
         <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
           <span class="visually-hidden"></span>
         </span>
       </td>
-      <td>
+      <td class="buttons">
         <button type="button" routerLink="/pacientes/pacientes-detalhe" class="btn btn-outline-primary btn-sm me-1"><i class="fa fa-edit"></i></button>
-        <button type="button" class="btn btn-outline-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalPacientes"><i class="fa fa-trash"></i></button>
+        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPacientes"><i class="fa fa-trash"></i></button>
       </td>
     </tr>
   </tbody>

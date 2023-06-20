@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-menu-lista',
   templateUrl: './menu-lista.component.html',

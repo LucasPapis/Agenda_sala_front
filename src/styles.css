@@ -2,3 +2,22 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+table tbody tr{
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 1025px) {
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+  .response-table{
+    width: 95%;
+    font-size:15px;
+  }
+}

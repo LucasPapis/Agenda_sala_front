@@ -1,8 +1,17 @@
 .customDivButton{
-  transition-duration: 0.4s;
+  transition: 0.2s;
+  color: white;
 }
 .customDivButton:hover{
   background-color: rgb(13, 106, 255);
   color: white!important;
-  transition-property: background-color;
+}
+#datetime{
+  width: 80px;
+  height: 45px;
+  text-align: center;
+  font-size: 14px;
+}
+#name{
+  margin-top: 10px;
 }

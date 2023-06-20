@@ -1,12 +1,14 @@
 <app-titulo [tituloName]="'Agendamentos {Nome da sala}'"></app-titulo>
-<div class="container w-100 mx-auto mt-4">
-  <button type="button" class="btn btn-outline-primary plus" routerLink="/menu/agendamento-detalhe"><i class="fa fa-plus"></i></button>
-  <div class="d-flex flex-wrap ms-5 ">
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
+<div class="container mt-2" id="container">
+  <div class="grid d-flex flex-wrap mx-auto" id="grid">
+    <div class="col-12 mb-2" id="plus">
+      <button type="button" class="btn btn-outline-primary" routerLink="/menu/agendamento-detalhe"><i class="fa fa-plus"></i></button>
+    </div>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
         <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -16,16 +18,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">10:30</p>
+    <div class="col-md-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -35,16 +37,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">11:30</p>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -54,16 +56,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">12:30</p>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -73,16 +75,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">13:30</p>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -92,16 +94,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">14:30</p>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -111,16 +113,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">15:30</p>
+    <div class="col-2 border rounded shadow mb-4 " id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -130,16 +132,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">16:30</p>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -149,16 +151,16 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
     </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">17:30</p>
+    <div class="col-2 border rounded shadow mb-4" id="card">
+      <div class="bg-primary text-center rounded-top" id="hora">
+        <p class="text-white fs-4 ">9:30</p>
       </div>
-      <div class="ms-1 lh-sm">
+      <div class="ms-1 lh-sm" id="dados">
         <p>
           <strong>Paciente</strong><br/>
           Nome do paciente
@@ -168,26 +170,7 @@
           Nome do terapeuta
         </p>
       </div>
-      <div class="d-flex justify-content-between">
-        <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
-        <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
-      </div>
-    </div>
-    <div class="col-2 border rounded shadow mb-4 me-4">
-      <div class="bg-primary text-center rounded-top">
-        <p class="text-white fs-4 ">18:30</p>
-      </div>
-      <div class="ms-1 lh-sm">
-        <p>
-          <strong>Paciente</strong><br/>
-          Nome do paciente
-        </p>
-        <p>
-          <strong>Terapeuta</strong><br/>
-          Nome do terapeuta
-        </p>
-      </div>
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between" id="btns">
         <button type="submit" class="btn btn-outline-primary btn-sm my-2 ms-1">Editar</button>
         <button type="submit" class="btn btn-outline-danger btn-sm my-2 me-1" data-bs-toggle="modal" data-bs-target="#modalPacientes">Cancelar</button>
       </div>
