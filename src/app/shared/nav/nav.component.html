@@ -1,5 +1,6 @@
 <nav class="nav bg-primary bg-gradient shadow p-2 text-white d-flex justify-content-between fixed-top">
-  <button type="button" class="nav-item btn customDivButton align-middle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+  <button type="button" class="nav-item btn align-middle" data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasExample" id="navButton">
     <i class="fa-solid fa-bars fa-2xl"></i>
   </button>
   <!-- <app-titulo [tituloName]="'Controle de salas'" class="nav-item mt-2"></app-titulo> -->
@@ -24,12 +25,12 @@
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a routerLink="/pacientes/pacientes-lista" class="nav-link link-dark customDivButton rounded p-3" data-bs-dismiss="offcanvas">
-          Cadastro de pacientes
+          Pacientes
         </a>
       </li>
       <li>
         <a routerLink="/atendentes/atendentes-lista" class="nav-link link-dark customDivButton rounded p-3" data-bs-dismiss="offcanvas">
-          Cadastro de atendentes
+          Terapeutas
         </a>
       </li>
       <li>

@@ -1,17 +1,17 @@
 <app-titulo [tituloName]="'Cadastro de salas'"></app-titulo>
-<div class="container w-50">
+<div class="container" id="container">
   <form class="row g-3 mt-2 border rounded">
-    <div>
+    <div class="col-12">
       <label for="nomeSalas" class="form-label">Nome da Sala</label>
       <input type="text" class="form-control" id="nomeSalas">
     </div>
-    <div class="col-3">
+    <div class="col-3 time">
       <label for="IniAtend" class="form-label">Primeiro Horario</label>
-      <input type="time" class="form-control" id="IniAtend">
+      <input type="time" class="form-control" id="IniAtend" value="00:00">
     </div>
-    <div class="col-3">
+    <div class="col-3 time">
       <label for="FimAtend" class="form-label">Ultimo Horario</label>
-      <input type="time" class="form-control" id="FimAtend">
+      <input type="time" class="form-control" id="FimAtend" value="00:00">
     </div>
     <div class="ms-1 mb-2">
       <label class="form-check-label" for="ativoSalas">Ativo</label>

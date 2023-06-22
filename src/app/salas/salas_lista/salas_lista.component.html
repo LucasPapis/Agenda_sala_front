@@ -1,11 +1,14 @@
 <app-titulo [tituloName]="'Configurações de sala'"></app-titulo>
-<table class="table text-center mx-auto response-table align-middle">
+<div class="position-absolute end-0" id="plus">
+  <button type="button" class="btn btn-outline-primary" routerLink="/salas/salas-detalhe"><i class="fa fa-plus"></i></button>
+</div>
+<table class="table text-center mx-auto response-table align-middle mt-5">
   <thead class="table-dark align-middle">
     <tr>
       <th>Nome da Sala</th>
       <th>Inicio do horario</th>
       <th>Fim do horario</th>
-      <th>Ativo</th>
+      <th>Status</th>
       <th><i class="fa fa-gear"></i></th>
     </tr>
   </thead>

@@ -1,13 +1,13 @@
 <app-titulo [tituloName]="'Cadastro de pacientes'"></app-titulo>
-<div class="container w-50">
+<div class="container" id="container">
   <form [formGroup]="formulario" class="row g-3 mt-1 border rounded">
     <div>
       <label for="nomePacientes" class="form-label">Nome</label>
       <input type="text" class="form-control" id="nomePacientes">
     </div>
-    <div class="col-4">
+    <div class="col-6">
       <label for="dtnasc" class="form-label">Data de nascimento</label>
-      <div class="input-group col-sm-2 ">
+      <div class="input-group">
         <input type="datetime" class="form-control" formControlName="dtnasc" id="dtnasc"
         [bsConfig]="bsConfig" bsDatepicker #datapicker="bsDatepicker" triggers="none"
         placement="right"/>

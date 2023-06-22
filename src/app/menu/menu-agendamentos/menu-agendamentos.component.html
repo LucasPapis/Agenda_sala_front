@@ -1,9 +1,10 @@
 <app-titulo [tituloName]="'Agendamentos {Nome da sala}'"></app-titulo>
 <div class="container mt-2" id="container">
   <div class="grid d-flex flex-wrap mx-auto" id="grid">
-    <div class="col-12 mb-2" id="plus">
+    <div class="position-absolute end-0"id="plus">
       <button type="button" class="btn btn-outline-primary" routerLink="/menu/agendamento-detalhe"><i class="fa fa-plus"></i></button>
     </div>
+    <div class="col-12 mt-5"></div>
     <div class="col-2 border rounded shadow mb-4" id="card">
       <div class="bg-primary text-center rounded-top" id="hora">
         <p class="text-white fs-4 ">9:30</p>

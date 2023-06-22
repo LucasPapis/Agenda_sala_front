@@ -3,9 +3,18 @@
   color: white;
 }
 .customDivButton:hover{
-  background-color: rgb(13, 106, 255);
+  background-color: rgb(27, 118, 253);
   color: white!important;
 }
+#navButton{
+  transition: 0.2s;
+  color: white;
+}
+#navButton:hover{
+  background-color: rgb(255, 255, 255);
+  color: black!important;
+}
+
 #datetime{
   width: 80px;
   height: 45px;

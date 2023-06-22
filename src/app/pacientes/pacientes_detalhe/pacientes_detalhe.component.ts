@@ -21,7 +21,8 @@ export class Pacientes_detalheComponent implements OnInit {
 
     this.bsConfig = {
       containerClass: 'theme-dark-blue',
-      dateInputFormat: 'DD/MM/YYYY'
+      dateInputFormat: 'DD/MM/YYYY',
+      adaptivePosition: true
     };
   }
 

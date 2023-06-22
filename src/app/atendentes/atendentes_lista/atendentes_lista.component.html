@@ -1,10 +1,13 @@
 <app-titulo [tituloName]="'Terapeutas'"></app-titulo>
-<table class="table text-center mx-auto response-table align-middle">
+<div class="position-absolute end-0" id="plus">
+  <button type="button" class="btn btn-outline-primary" routerLink="/atendentes/atendentes-detalhe"><i class="fa fa-plus"></i></button>
+</div>
+<table class="table text-center mx-auto response-table align-middle mt-5">
   <thead class="table-dark">
     <tr>
       <th>#</th>
       <th>Nome</th>
-      <th>Ativo</th>
+      <th>Status</th>
       <th><i class="fa fa-gear"></i></th>
     </tr>
   </thead>
