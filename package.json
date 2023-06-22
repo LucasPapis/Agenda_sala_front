@@ -6,7 +6,8 @@
     "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy:ghdocs":"ng build --configuration production --output-path docs --base-href /Agenda_sala/"
   },
   "private": true,
   "dependencies": {
