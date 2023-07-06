@@ -11,21 +11,28 @@
       <th><i class="fa fa-gear"></i></th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>Paciente teste da silva</td>
-      <td>01/04/1998</td>
+  <tbody *ngIf="pacientes && pacientes.length">
+    <tr *ngFor="let paciente of pacientes">
+      <td>{{paciente.nm_pac}}</td>
+      <td>{{paciente.dt_nasc | DataFormatPipe}}</td>
       <td>
-        <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
+        <span class="badge border rounded-circle p-1" [ngStyle]="paciente.ativo?{'background-color':'#00ff2f'}:{'background-color':'#ff0000'}">
           <span class="visually-hidden"></span>
         </span>
       </td>
       <td class="buttons">
-        <button type="button" routerLink="/pacientes/pacientes-detalhe" class="btn btn-outline-primary btn-sm me-1"><i class="fa fa-edit"></i></button>
+        <button type="button" routerLink="/pacientes/pacientes-detalhe" class="btn btn-outline-primary btn-sm me-1" (click)="pacientesDetalhe(paciente.id_pac)"><i class="fa fa-edit"></i></button>
         <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPacientes"><i class="fa fa-trash"></i></button>
       </td>
     </tr>
   </tbody>
+  <tfoot *ngIf="!pacientes.length">
+    <tr>
+        <td colspan="8" class="text-center">
+            <h6>Nenhum paciente encontrado.</h6>
+        </td>
+    </tr>
+</tfoot>
 </table>
 <div class="modal modal-sm fade" id="modalPacientes" tabindex="-1" aria-labelledby="modalPacientes" aria-hidden="true">
   <div class="modal-dialog">
