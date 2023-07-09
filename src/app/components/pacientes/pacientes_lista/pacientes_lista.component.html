@@ -22,35 +22,34 @@
       </td>
       <td class="buttons">
         <button type="button" routerLink="/pacientes/pacientes-detalhe" class="btn btn-outline-primary btn-sm me-1" (click)="pacientesDetalhe(paciente.id_pac)"><i class="fa fa-edit"></i></button>
-        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPacientes"><i class="fa fa-trash"></i></button>
+        <button type="button" class="btn btn-outline-danger btn-sm" (click)="openModal(tamplate)"><i class="fa fa-trash"></i></button>
       </td>
     </tr>
   </tbody>
   <tfoot *ngIf="!pacientes.length">
     <tr>
         <td colspan="8" class="text-center">
-            <h6>Nenhum paciente encontrado.</h6>
+          <h6>Nenhum paciente encontrado.</h6>
         </td>
     </tr>
 </tfoot>
 </table>
-<div class="modal modal-sm fade" id="modalPacientes" tabindex="-1" aria-labelledby="modalPacientes" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header text-white bg-primary bg-gradient">
-        <h5 class="modal-title">Deseja mesmo excluir?</h5>
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-      </div>
-      <div class="modal-body">
-        <p>Isso não poderá ser desfeito!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-outline-danger">Sim</button>
-      </div>
-    </div>
+<!-- <div class="modal modal-sm fade" id="modalPacientes" tabindex="-1" aria-labelledby="modalPacientes" aria-hidden="true"> -->
+<ng-template #tamplate>
+  <div class="modal-header text-white bg-primary bg-gradient">
+    <h5 class="modal-title">Deseja mesmo excluir?</h5>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
   </div>
-</div>
+  <div class="modal-body">
+    <p>Isso não poderá ser desfeito!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary">Não</button>
+    <button type="button" class="btn btn-outline-danger" (click)="desativarPaciente()">Sim</button>
+  </div>
+</ng-template>
+
+<!-- </div> -->
 <footer class="position-absolute bottom-0 end-0 me-4 mb-2">
   <div class="d-inline me-2">
     <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">

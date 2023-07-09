@@ -28,6 +28,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { PacienteService } from './services/paciente.service';
 import { DataFormatPipe } from './helpers/DataFormat.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { ModalModule } from 'ngx-bootstrap/modal'
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,16 @@ import { DataFormatPipe } from './helpers/DataFormat.pipe';
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      progressBar:true,
+      progressAnimation: 'increasing'
+    }),
+    ModalModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [PacienteService],
   bootstrap: [AppComponent]

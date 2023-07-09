@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { BsDatepickerConfig, BsDatepickerDirective } from 'ngx-bootstrap/datepicker';
+import { ToastrService } from 'ngx-toastr';
 import { Paciente } from 'src/app/models/Paciente';
 import { PacienteService } from 'src/app/services/paciente.service';
 
@@ -24,12 +25,10 @@ export class Pacientes_detalheComponent implements OnInit {
   constructor(
     private activatedRouter: ActivatedRoute,
     private pacienteService: PacienteService,
-    private fb:FormBuilder
-    ) {
-    this.formulario = new FormGroup({
-
-    });
-
+    private fb:FormBuilder,
+    private toastr:ToastrService
+  ) {
+    this.formulario = new FormGroup({});
     this.bsConfig = {
       containerClass: 'theme-dark-blue',
       dateInputFormat: 'DD/MM/YYYY',
