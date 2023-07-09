@@ -28,26 +28,27 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { PacienteService } from './services/paciente.service';
 import { DataFormatPipe } from './helpers/DataFormat.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
-      MenuComponent,
-      MenuListaComponent,
-      MenuAgendamentosComponent,
-      AgendamentoDetalheComponent,
-      SalasComponent,
-      Salas_listaComponent,
-      Salas_detalheComponent,
-      AtendentesComponent,
-      Atendentes_detalheComponent,
-      Atendentes_listaComponent,
-      PacientesComponent,
-      Pacientes_detalheComponent,
-      Pacientes_listaComponent,
-      NavComponent,
-      TituloComponent,
-      DataFormatPipe
-   ],
+    MenuComponent,
+    MenuListaComponent,
+    MenuAgendamentosComponent,
+    AgendamentoDetalheComponent,
+    SalasComponent,
+    Salas_listaComponent,
+    Salas_detalheComponent,
+    AtendentesComponent,
+    Atendentes_detalheComponent,
+    Atendentes_listaComponent,
+    PacientesComponent,
+    Pacientes_detalheComponent,
+    Pacientes_listaComponent,
+    NavComponent,
+    TituloComponent,
+    DataFormatPipe
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

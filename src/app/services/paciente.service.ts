@@ -11,7 +11,17 @@ export class PacienteService {
   constructor(private http:HttpClient) { }
 
   getPaciente():Observable<Paciente[]>{
-    return this.http.get<Paciente[]>(this.baseUrl)
+    return this.http.get<Paciente[]>(this.baseUrl);
   }
+  getPacienteById(id:number):Observable<Paciente>{
+    return this.http.get<Paciente>(`${this.baseUrl}/${id}`);
+  }
+  postPacs(pac:Paciente):Observable<Paciente>{
+    return this.http.post<Paciente>(this.baseUrl, pac);
+  }
+  putPacs(id:number, pac:Paciente):Observable<Paciente>{
+    return this.http.put<Paciente>(`${this.baseUrl}/${id}`, pac);
+  }
+
 
 }
