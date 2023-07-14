@@ -1,5 +1,3 @@
-import { NgModule } from '@angular/core';
-
 //Components
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -24,14 +22,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { PacienteService } from './services/paciente.service';
 import { DataFormatPipe } from './helpers/DataFormat.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal'
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { ptBrLocale } from 'ngx-bootstrap/locale';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { NgModule } from '@angular/core';
+defineLocale('pt-br', ptBrLocale)
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       progressAnimation: 'increasing'
     }),
     ModalModule.forRoot(),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FormsModule
   ],
   providers: [PacienteService],
   bootstrap: [AppComponent]

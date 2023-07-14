@@ -10,6 +10,9 @@ export class PacienteService {
 
   constructor(private http:HttpClient) { }
 
+  getPacientePesquisa(pesquisa:string):Observable<Paciente[]>{
+    return this.http.get<Paciente[]>(`${this.baseUrl}?pesquisa=${pesquisa}`);
+  }
   getPaciente():Observable<Paciente[]>{
     return this.http.get<Paciente[]>(this.baseUrl);
   }
