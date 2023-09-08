@@ -1,6 +1,5 @@
 export interface Paciente {
-  id_pac: number;
-  nm_pac: string;
+  id_paciente: number;
+  nm_paciente: string;
   dt_nasc: Date;
-  ativo: Boolean;
 }

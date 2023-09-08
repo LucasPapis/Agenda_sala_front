@@ -1,10 +1,18 @@
+.container{
+  width: 95%;
+}
 table tbody tr{
   background-color: rgba(0, 0, 0, 0.04);
 }
 
 #plus{
-  margin-right: 10px;
+  border-color: white;
 }
+
+/* tfoot{
+  background-color: red;
+  color: white;
+} */
 
 @media (min-width: 1025px) {
 
@@ -23,4 +31,3 @@ table tbody tr{
     width: 100px;
   }
 }
-

@@ -1,3 +1,14 @@
 <div class="d-flex align-middle justify-content-center">
-  <h2>{{tituloName}}</h2>
+  <form [formGroup]="pesquisa" class="border" id="search-box">
+    <h2>{{tituloName}}</h2>
+    <div class="d-inline-block mt-2" id="group">
+      <div class="input-group">
+        <select class="form-select" id="select" formControlName="select">
+          <option *ngFor="let opt of opts" [value]="opt">{{'Buscar por ' + opt }}</option>
+        </select>
+        <input type="text" class="form-control" formControlName="busca" placeholder="Buscar..." id="buscar" (keydown)="onKeyDown($event)">
+        <button type="button" class="btn btn-outline-secondary" (click)="pesquisaM()"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </form>
 </div>

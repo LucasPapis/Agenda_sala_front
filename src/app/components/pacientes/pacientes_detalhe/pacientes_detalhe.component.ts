@@ -1,3 +1,4 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,6 +15,7 @@ import { PacienteService } from 'src/app/services/paciente.service';
 })
 export class Pacientes_detalheComponent implements OnInit {
   pacId: number;
+  statusCode:number;
   PostPut: string;
   paciente: Paciente;
   formulario: FormGroup;
@@ -54,10 +56,13 @@ export class Pacientes_detalheComponent implements OnInit {
       this.PostPut = 'PUT';
       this.spinner.show();
       this.pacienteService.getPacienteById(this.pacId).subscribe({
-        next: (pac: Paciente) => {
-          this.paciente = {...pac};
-          this.paciente.dt_nasc = new Date(this.paciente.dt_nasc);
-          this.formulario.patchValue(this.paciente);
+        next: (response:HttpResponse<any>) => {
+          this.statusCode = response.status;
+          if(this.statusCode == 200){
+            this.paciente = {...response.body};
+            this.paciente.dt_nasc = new Date(this.paciente.dt_nasc);
+            this.formulario.patchValue(this.paciente);
+          }
         },
         error: (error:any) => {
           this.toastr.error('Erro ao carregar paciente','Pacientes');
@@ -107,12 +112,11 @@ export class Pacientes_detalheComponent implements OnInit {
 
     }
   }
-  
+
   public validation():void{
     this.formulario = this.fb.group({
-      nm_pac: ['',Validators.required],
-      dt_nasc: ['',Validators.required],
-      ativo: ['']
+      nm_paciente: ['',Validators.required],
+      dt_nasc: ['',Validators.required]
     });
   }
 

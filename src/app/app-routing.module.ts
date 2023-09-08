@@ -27,6 +27,7 @@ const routes: Routes = [
     {path: 'pacientes-lista', component: Pacientes_listaComponent}
   ]},
   {path: 'atendentes', component: AtendentesComponent, children:[
+    {path: 'atendentes-detalhe/:id', component: Atendentes_detalheComponent},
     {path: 'atendentes-detalhe', component: Atendentes_detalheComponent},
     {path: 'atendentes-lista', component: Atendentes_listaComponent}
   ]},

@@ -1,61 +1,47 @@
-<app-titulo [tituloName]="'Terapeutas'"></app-titulo>
-<div class="position-absolute end-0" id="plus">
-  <button type="button" class="btn btn-outline-primary" routerLink="/atendentes/atendentes-detalhe"><i class="fa fa-plus"></i></button>
+<div class="container">
+  <app-titulo [tituloName]="'Terapeutas'" [opts]="opts" [opt]="this.opts[0]" (buttonClicked)="pesquisaTera($event)" class="text-center"></app-titulo>
+  <table class="table text-center mx-auto response-table align-middle mt-3">
+    <thead class="table-dark align-middle">
+      <tr>
+        <th>Cracha</th>
+        <th>Nome</th>
+        <th><i class="fa fa-gear"></i></th>
+        <th>
+          <button type="button" id="plus" class="btn btn-outline-primary" routerLink="/atendentes/atendentes-detalhe"><i class="fa fa-plus"></i></button>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="teras && teras.length > 0">
+      <tr *ngFor="let tera of teras">
+        <td>{{tera.cracha}}</td>
+        <td>{{tera.nm_terapeuta}}</td>
+        <td class="buttons">
+          <button type="button" class="btn btn-outline-primary btn-sm me-1" (click)="atendentesDetalhe(tera.id_terapeuta)"><i class="fa fa-edit"></i></button>
+          <button type="button" class="btn btn-outline-danger btn-sm ms-1" (click)="openModal(tamplate,tera.id_terapeuta)"><i class="fa fa-trash"></i></button>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!teras.length">
+      <tr>
+          <td colspan="8" class="text-center">
+            <h6>Nenhum terapeuta encontrado.</h6>
+          </td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
-<table class="table text-center mx-auto response-table align-middle mt-5">
-  <thead class="table-dark">
-    <tr>
-      <th>#</th>
-      <th>Nome</th>
-      <th>Status</th>
-      <th><i class="fa fa-gear"></i></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Cibele Merabe de Barros Brito</td>
-      <td>
-        <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
-          <span class="visually-hidden"></span>
-        </span>
-      </td>
-      <td>
-        <button type="button" routerLink="/atendentes/atendentes-detalhe" class="btn btn-outline-primary btn-sm me-1"><i class="fa fa-edit"></i></button>
-        <button type="button" class="btn btn-outline-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalAtendentes"><i class="fa fa-trash"></i></button>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
-<div class="modal modal-sm fade" id="modalAtendentes" tabindex="-1" aria-labelledby="modalAtendentes" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header text-white bg-primary bg-gradient">
-        <h5 class="modal-title">Deseja mesmo excluir?</h5>
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-      </div>
-      <div class="modal-body">
-        <p>Isso não poderá ser desfeito!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-outline-danger">Sim</button>
-      </div>
-    </div>
+<ng-template #tamplate>
+  <div class="modal-header text-white bg-primary bg-gradient">
+    <h5 class="modal-title">Deseja mesmo excluir?</h5>
+    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
   </div>
-</div>
-<footer class="position-absolute bottom-0 end-0 me-4 mb-2">
-  <div class="d-inline me-2">
-    <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
-      <span class="visually-hidden"></span>
-    </span>
-    Ativo
+  <div class="modal-body">
+    <p>Isso não poderá ser desfeito!</p>
   </div>
-  <div class="d-inline">
-    <span class="badge border rounded-circle p-1" style="background-color:#ff0000">
-      <span class="visually-hidden"></span>
-    </span>
-    Desativado
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="closeModal()">Não</button>
+    <button type="button" class="btn btn-outline-danger" (click)="deletarTera()">Sim</button>
   </div>
-</footer>
+</ng-template>

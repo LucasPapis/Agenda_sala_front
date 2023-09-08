@@ -1,12 +1,11 @@
-<app-titulo [tituloName]="'Cadastro de pacientes'"></app-titulo>
 <div class="container" id="container">
-  <form [formGroup]="formulario" class="row g-3 mt-1 border rounded">
+  <form [formGroup]="formulario" class="row g-3 shadow p-2 border rounded">
     <div>
       <label for="nomePacientes" class="form-label">Nome</label>
       <input type="text" class="form-control"
-      [ngClass]="{'is-invalid':controls.nm_pac.errors && controls.nm_pac.touched}"
-      id="nomePacientes" formControlName="nm_pac">
-      <div class="invalid-feedback">O nome do paciente é obrigatório</div>
+      [ngClass]="{'is-invalid':controls.nm_paciente.errors && controls.nm_paciente.touched}"
+      id="nomePacientes" formControlName="nm_paciente">
+      <div class="invalid-feedback">O nome da sala é obrigatório</div>
     </div>
     <div class="col-6">
       <label for="dtnasc" class="form-label">Data de nascimento</label>
@@ -18,14 +17,8 @@
         <div class="invalid-feedback">A data de nascimento é obrigatória</div>
       </div>
     </div>
-    <div class="ms-1">
-      <label class="form-check-label" for="ativoPacientes">Ativo</label>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="ativoPacientes" checked formControlName="ativo">
-      </div>
-    </div>
     <div class="d-flex justify-content-between mb-2">
-      <button type="submit" class="btn btn-outline-danger"  routerLink="/pacientes/pacientes-lista">Cancelar</button>
+      <button type="submit" class="btn btn-outline-danger" routerLink="/pacientes/pacientes-lista">Cancelar</button>
       <button type="submit" class="btn btn-outline-success" (click)="salvarAlteracao()">Efetivar</button>
     </div>
   </form>

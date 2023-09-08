@@ -1,62 +1,68 @@
-<app-titulo [tituloName]="'Configurações de sala'"></app-titulo>
-<div class="position-absolute end-0" id="plus">
-  <button type="button" class="btn btn-outline-primary" routerLink="/salas/salas-detalhe"><i class="fa fa-plus"></i></button>
-</div>
-<table class="table text-center mx-auto response-table align-middle mt-5">
-  <thead class="table-dark align-middle">
-    <tr>
-      <th>Nome da Sala</th>
-      <th>Inicio do horario</th>
-      <th>Fim do horario</th>
-      <th>Status</th>
-      <th><i class="fa fa-gear"></i></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sala Bomba</td>
-      <td>9h</td>
-      <td>18h</td>
-      <td>
-        <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
-          <span class="visually-hidden"></span>
-        </span>
-      </td>
-      <td class="buttons">
-        <button type="button" routerLink="/salas/salas-detalhe" class="btn btn-outline-primary btn-sm me-1"><i class="fa fa-edit"></i></button>
-        <button type="button" class="btn btn-outline-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalSalas"><i class="fa fa-trash"></i></button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<div class="modal modal-sm fade" id="modalSalas" tabindex="-1" aria-labelledby="modalSalas" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header text-white bg-primary bg-gradient">
-        <h5 class="modal-title">Deseja mesmo excluir?</h5>
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-      </div>
-      <div class="modal-body">
-        <p>Isso não poderá ser desfeito!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-outline-danger">Sim</button>
+<div class="container">
+  <app-titulo [tituloName]="'Salas'" (buttonClicked)="pesquisaSalas($event)" [opts]="opts" [opt]="this.opts[0]" class="text-center"></app-titulo>
+  <table class="table text-center mx-auto response-table align-middle mt-5">
+    <thead class="table-dark align-middle">
+      <tr>
+        <th>Nome da Sala</th>
+        <th>Inicio do horario</th>
+        <th>Fim do horario</th>
+        <th><i class="fa fa-gear"></i></th>
+        <th>
+          <button type="button" id="plus" class="btn btn-outline-primary" routerLink="/salas/salas-detalhe"><i class="fa fa-plus"></i></button>
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="salas && salas.length > 0">
+      <tr *ngFor="let sala of salas">
+        <td>{{sala.nm_sala}}</td>
+        <td>{{sala.p_horario | DataFormatPipe}}</td>
+        <td>{{sala.u_horario | DataFormatPipe}}</td>
+        <td class="buttons">
+          <button type="button" routerLink="/salas/salas-detalhe" class="btn btn-outline-primary btn-sm me-1"><i class="fa fa-edit"></i></button>
+          <button type="button" class="btn btn-outline-danger btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalSalas"><i class="fa fa-trash"></i></button>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!salas.length">
+      <tr>
+          <td colspan="8" class="text-center">
+            <h6>Nenhuma sala encontrada.</h6>
+          </td>
+      </tr>
+    </tfoot>
+  </table>
+<!--
+  <div class="modal modal-sm fade" id="modalSalas" tabindex="-1" aria-labelledby="modalSalas" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-white bg-primary bg-gradient">
+          <h5 class="modal-title">Deseja mesmo excluir?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Isso não poderá ser desfeito!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-outline-danger">Sim</button>
+        </div>
       </div>
     </div>
-  </div>
+  </div>-->
+
+  <ng-template #tamplate>
+    <div class="modal-header text-white bg-primary bg-gradient">
+      <h5 class="modal-title">Deseja mesmo excluir?</h5>
+      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+    </div>
+    <div class="modal-body">
+      <p>Isso não poderá ser desfeito!</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="closeModal()">Não</button>
+      <button type="button" class="btn btn-outline-danger" (click)="deletarSalas()">Sim</button>
+    </div>
+  </ng-template>
+
 </div>
-<footer class="position-absolute bottom-0 end-0 me-4 mb-2">
-  <div class="d-inline me-2">
-    <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
-      <span class="visually-hidden"></span>
-    </span>
-    Ativo
-  </div>
-  <div class="d-inline">
-    <span class="badge border rounded-circle p-1" style="background-color:#ff0000">
-      <span class="visually-hidden"></span>
-    </span>
-    Desativado
-  </div>
-</footer>

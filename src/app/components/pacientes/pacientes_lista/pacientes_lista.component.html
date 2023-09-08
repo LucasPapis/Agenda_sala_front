@@ -1,22 +1,10 @@
 <div class="container">
-  <form [formGroup]="pesquisa" class="border" id="search-box">
-    <app-titulo [tituloName]="'Pacientes'" class="text-center"></app-titulo>
-    <div class="d-inline-block mt-2" id="group">
-      <div class="input-group">
-        <select class="form-select" id="select" formControlName="select">
-          <option *ngFor="let opt of opts" [value]="opt">{{'Buscar por ' + opt }}</option>
-        </select>
-        <input type="text" class="form-control" formControlName="busca" placeholder="Buscar..." id="buscar">
-        <button type="button" class="btn btn-outline-secondary" (click)="pesquisaPac()"><i class="fa fa-search"></i></button>
-      </div>
-    </div>
-  </form>
+  <app-titulo [tituloName]="'Pacientes'" (buttonClicked)="pesquisaPac($event)" [opts]="opts" [opt]="this.opts[0]" class="text-center"></app-titulo>
   <table class="table text-center mx-auto response-table align-middle mt-3">
     <thead class="table-dark align-middle">
       <tr>
         <th>Nome</th>
         <th>Data de nascimento</th>
-        <th>Status</th>
         <th>
           <i class="fa fa-gear"></i>
         </th>
@@ -25,18 +13,13 @@
         </th>
       </tr>
     </thead>
-    <tbody *ngIf="pacientes && pacientes.length">
+    <tbody *ngIf="pacientes && pacientes.length > 0" >
       <tr *ngFor="let paciente of pacientes">
-        <td>{{paciente.nm_pac}}</td>
+        <td>{{paciente.nm_paciente}}</td>
         <td>{{paciente.dt_nasc | DataFormatPipe}}</td>
-        <td>
-          <span class="badge border rounded-circle p-1" [ngStyle]="paciente.ativo?{'background-color':'#00ff2f'}:{'background-color':'#ff0000'}">
-            <span class="visually-hidden"></span>
-          </span>
-        </td>
         <td class="buttons">
-          <button type="button" routerLink="/pacientes/pacientes-detalhe" class="btn btn-outline-primary btn-sm me-1" (click)="pacientesDetalhe(paciente.id_pac)"><i class="fa fa-edit"></i></button>
-          <button type="button" class="btn btn-outline-danger btn-sm" (click)="openModal(tamplate)"><i class="fa fa-trash"></i></button>
+          <button type="button" routerLink="/pacientes/pacientes-detalhe" class="btn btn-outline-primary btn-sm me-1" (click)="pacientesDetalhe(paciente.id_paciente)"><i class="fa fa-edit"></i></button>
+          <button type="button" class="btn btn-outline-danger btn-sm" (click)="openModal(tamplate,paciente.id_paciente)"><i class="fa fa-trash"></i></button>
         </td>
         <td></td>
       </tr>
@@ -47,9 +30,10 @@
             <h6>Nenhum paciente encontrado.</h6>
           </td>
       </tr>
-  </tfoot>
+    </tfoot>
   </table>
 </div>
+
 <!-- <div class="modal modal-sm fade" id="modalPacientes" tabindex="-1" aria-labelledby="modalPacientes" aria-hidden="true"> -->
 <ng-template #tamplate>
   <div class="modal-header text-white bg-primary bg-gradient">
@@ -60,23 +44,7 @@
     <p>Isso não poderá ser desfeito!</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary">Não</button>
-    <button type="button" class="btn btn-outline-danger" (click)="desativarPaciente()">Sim</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="closeModal()">Não</button>
+    <button type="button" class="btn btn-outline-danger" (click)="deletarPac()">Sim</button>
   </div>
 </ng-template>
-
-<!-- </div> -->
-<footer class="position-absolute bottom-0 end-0 me-4 mb-2">
-  <div class="d-inline me-2">
-    <span class="badge border rounded-circle p-1" style="background-color:#00ff2f">
-      <span class="visually-hidden"></span>
-    </span>
-    Ativo
-  </div>
-  <div class="d-inline">
-    <span class="badge border rounded-circle p-1" style="background-color:#ff0000">
-      <span class="visually-hidden"></span>
-    </span>
-    Desativado
-  </div>
-</footer>
